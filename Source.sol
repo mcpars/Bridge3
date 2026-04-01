@@ -22,7 +22,7 @@ contract Source is AccessControl {
     }
 
 	function deposit(address _token, address _recipient, uint256 _amount ) public {
-		bool success = ERC20(_token).transferFrom(msg.sender, address(this), amount);
+		bool success = ERC20(_token).transferFrom(msg.sender, address(this), _amount);
 	}
 
 	function withdraw(address _token, address _recipient, uint256 _amount ) onlyRole(WARDEN_ROLE) public {
